@@ -1,13 +1,64 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ZOO Praha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    adam hennane
-    whatsapp skupina hennanes
+    <header>
+        <h1>Vítejte v ZOO Praha!</h1>
+        <nav>
+            <a href="#zvirata">Zvířata</a>
+            <a href="#vstupne">Vstupné</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="zvirata">
+            <h2>Naše zvířata</h2>
+            <div class="animal">
+                <img src="https://placekitten.com/200/200" alt="Lev">
+                <h3>Lev</h3>
+                <p>Král zvířat, pochází z Afriky.</p>
+            </div>
+            <div class="animal">
+                <img src="https://placebear.com/200/200" alt="Medvěd">
+                <h3>Medvěd</h3>
+                <p>Silný šelma z Evropy a Severní Ameriky.</p>
+            </div>
+        </section>
+
+        <section id="vstupne">
+            <h2>Vstupné</h2>
+            <ul>
+                <li>Dospělý: 250 Kč</li>
+                <li>Dítě: 150 Kč</li>
+                <li>Důchodce: 180 Kč</li>
+            </ul>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontaktujte nás</h2>
+            <form onsubmit="odeslatFormular(event)">
+                <label for="jmeno">Jméno:</label>
+                <input type="text" id="jmeno" required>
+                <label for="zprava">Zpráva:</label>
+                <textarea id="zprava" required></textarea>
+                <button type="submit">Odeslat</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ZOO Praha</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
 
