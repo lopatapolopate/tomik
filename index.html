@@ -19,43 +19,57 @@
     <main>
         <section id="zvirata">
             <h2>Naše zvířata</h2>
-
             <div class="animal">
-                <div class="image-pair">
-                    <img src="https://example.com/lev1.jpg" alt="Lev v savaně">
-                    <img src="https://example.com/lev2.jpg" alt="Lev odpočívající ve stínu">
-                </div>
+                <img src="https://cdn.administrace.tv/2022/04/23/medium_169/f2695214bcd032ac0aa0af13fb543bed.jpg" alt="Lev">
                 <h3>Lev</h3>
-                <p>Lev je majestátní šelma známá jako král zvířat. Obývá africké savany a je proslulý svou hřívou a silným řevem. V naší ZOO můžete pozorovat lvy v prostředí připomínajícím jejich přirozený domov.</p>
+                <p>Král zvířat, pochází z Afriky.</p>
             </div>
-
             <div class="animal">
-                <div class="image-pair">
-                    <img src="https://example.com/hroch1.jpg" alt="Hroch ve vodě">
-                    <img src="https://example.com/hroch2.jpg" alt="Hroch na břehu">
-                </div>
+                <img src="https://nasregion.cz/wp-content/uploads/2020/09/hroch-1-e1623417665831.jpg" alt="Hroch">
                 <h3>Hroch</h3>
-                <p>Hroch je velký savec, který tráví většinu času ve vodě. Navzdory své mohutnosti je velmi rychlý a nebezpečný. V naší ZOO můžete sledovat hrochy při jejich vodních aktivitách i odpočinku na souši.</p>
+                <p>Král vod Afriky.</p>
             </div>
-
             <div class="animal">
-                <div class="image-pair">
-                    <img src="https://example.com/medved1.jpg" alt="Medvěd v lese">
-                    <img src="https://example.com/medved2.jpg" alt="Medvěd při lovu">
-                </div>
+                <img src="https://dam.production.vlm.nmheagle.sk/api/image/1366x910/c79/c79f4a7b-6516-4f91-a0bd-e5874c0ebadc.jpeg" alt="Medvěd">
                 <h3>Medvěd</h3>
-                <p>Medvědi jsou silní a inteligentní tvorové, kteří obývají různé části světa. V naší ZOO se můžete setkat s medvědy hnědými, kteří mají prostorný výběh s možností úkrytu i vodních radovánek.</p>
+                <p>Silná šelma z Evropy a Severní Ameriky.</p>
             </div>
         </section>
 
-        <!-- Ostatní sekce zůstávají beze změny -->
+        <section id="vstupne">
+            <h2>Vstupné</h2>
+            <ul>
+                <li>Dospělý: 250 Kč</li>
+                <li>Dítě: 150 Kč</li>
+                <li>Důchodce: 180 Kč</li>
+            </ul>
+        </section>
 
+        <section id="kontakt">
+            <h2>Kontaktujte nás</h2>
+            <form onsubmit="odeslatFormular(event)">
+                <label for="jmeno">Jméno:</label>
+                <input type="text" id="jmeno" name="jmeno" required>
+                <label for="zprava">Zpráva:</label>
+                <textarea id="zprava" name="zprava" required></textarea>
+                <button type="submit">Odeslat</button>
+            </form>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2025 ZOO Praha | <a href="https://www.zoopraha.cz/" target="_blank">Oficiální web</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function odeslatFormular(event) {
+            event.preventDefault();
+            const jmeno = document.getElementById('jmeno').value;
+            const zprava = document.getElementById('zprava').value;
+            alert('Děkujeme, ' + jmeno + '! Vaše zpráva byla odeslána.');
+            // Zde můžete přidat kód pro odeslání dat na server
+        }
+    </script>
 </body>
 </html>
+
