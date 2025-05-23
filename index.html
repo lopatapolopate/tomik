@@ -51,20 +51,26 @@
             <h2>Kontaktujte nás</h2>
             <form onsubmit="odeslatFormular(event)">
                 <label for="jmeno">Jméno:</label>
-                <input type="text" id="jmeno" required>
+                <input type="text" id="jmeno" name="jmeno" required>
                 <label for="zprava">Zpráva:</label>
-                <textarea id="zprava" required></textarea>
+                <textarea id="zprava" name="zprava" required></textarea>
                 <button type="submit">Odeslat</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 ZOO Praha</p>
+        <p>&copy; 2025 ZOO Praha | <a href="https://www.zoopraha.cz/" target="_blank">Oficiální web</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function odeslatFormular(event) {
+            event.preventDefault();
+            const jmeno = document.getElementById('jmeno').value;
+            const zprava = document.getElementById('zprava').value;
+            alert('Děkujeme, ' + jmeno + '! Vaše zpráva byla odeslána.');
+            // Zde můžete přidat kód pro odeslání dat na server
+        }
+    </script>
 </body>
 </html>
-
-
