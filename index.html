@@ -22,8 +22,8 @@
 
             <div class="animal">
                 <div class="image-pair">
-                    <img src="https://cdn.administrace.tv/2022/04/23/medium_169/f2695214bcd032ac0aa0af13fb543bed.jpg" alt="Lev">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Lev_berbersk%C3%BD_%22Mat%C3%BDsek%22.jpg" alt="Lev 2">
+                    <img class="image-clickable" src="https://cdn.administrace.tv/2022/04/23/medium_169/f2695214bcd032ac0aa0af13fb543bed.jpg" alt="Lev">
+                    <img class="image-clickable" src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Lev_berbersk%C3%BD_%22Mat%C3%BDsek%22.jpg" alt="Lev 2">
                 </div>
                 <h3>Lev</h3>
                 <p>Král zvířat, pochází z Afriky.</p>
@@ -31,8 +31,8 @@
 
             <div class="animal">
                 <div class="image-pair">
-                    <img src="https://nasregion.cz/wp-content/uploads/2020/09/hroch-1-e1623417665831.jpg" alt="Hroch">
-                    <img src="https://edu.ceskatelevize.cz/storage/video/1200/4556-hroch-obojzivelny.jpg" alt="Hroch 2">
+                    <img class="image-clickable" src="https://nasregion.cz/wp-content/uploads/2020/09/hroch-1-e1623417665831.jpg" alt="Hroch">
+                    <img class="image-clickable" src="https://edu.ceskatelevize.cz/storage/video/1200/4556-hroch-obojzivelny.jpg" alt="Hroch 2">
                 </div>
                 <h3>Hroch</h3>
                 <p>Král vod Afriky.</p>
@@ -40,8 +40,8 @@
 
             <div class="animal">
                 <div class="image-pair">
-                    <img src="https://dam.production.vlm.nmheagle.sk/api/image/1366x910/c79/c79f4a7b-6516-4f91-a0bd-e5874c0ebadc.jpeg" alt="Medvěd">
-                    <img src="https://d15-a.sdn.cz/d_15/c_img_oX_A/kb9Yg2GWe0nAuqZCwGMfb/8da4/medved-medvedice-medved-hnedy-medvide.jpeg?fl=cro,0,213,4096,2304%7Cres,1200,,1%7Cjpg,80,,1" alt="Medvěd 2">
+                    <img class="image-clickable" src="https://dam.production.vlm.nmheagle.sk/api/image/1366x910/c79/c79f4a7b-6516-4f91-a0bd-e5874c0ebadc.jpeg" alt="Medvěd">
+                    <img class="image-clickable" src="https://d15-a.sdn.cz/d_15/c_img_oX_A/kb9Yg2GWe0nAuqZCwGMfb/8da4/medved-medvedice-medved-hnedy-medvide.jpeg?fl=cro,0,213,4096,2304%7Cres,1200,,1%7Cjpg,80,,1" alt="Medvěd 2">
                 </div>
                 <h3>Medvěd</h3>
                 <p>Silná šelma z Evropy a Severní Ameriky.</p>
@@ -49,15 +49,17 @@
         </section>
 
         <section id="vstupne">
-            <h2>Vstupné</h2>
-            <ul>
-                <li>Dospělý: 250 Kč</li>
-                <li>Dítě: 150 Kč</li>
-                <li>Důchodce: 180 Kč</li>
-            </ul>
+            <div id="admission">
+                <h2>Vstupné</h2>
+                <ul>
+                    <li>Dospělý: 250 Kč</li>
+                    <li>Dítě: 150 Kč</li>
+                    <li>Důchodce: 180 Kč</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="kontakt">
+        <section id="kontakt" class="contact">
             <h2>Kontaktujte nás</h2>
             <form onsubmit="odeslatFormular(event)">
                 <label for="jmeno">Jméno:</label>
@@ -66,6 +68,7 @@
                 <textarea id="zprava" name="zprava" required></textarea>
                 <button type="submit">Odeslat</button>
             </form>
+            <div id="potvrzeni"></div>
         </section>
     </main>
 
@@ -73,16 +76,36 @@
         <p>&copy; 2025 ZOO Praha</p>
     </footer>
 
+    <!-- Lightbox Overlay -->
+    <div id="lightbox-overlay" onclick="zavritLightbox()">
+        <img id="lightbox-img" src="" alt="Zvětšený obrázek">
+    </div>
+
     <script>
+        // Odeslání formuláře
         function odeslatFormular(event) {
             event.preventDefault();
             const jmeno = document.getElementById('jmeno').value;
             const zprava = document.getElementById('zprava').value;
-            alert('Děkujeme, ' + jmeno + '! Vaše zpráva byla odeslána.');
-            // Zde můžete přidat kód pro odeslání dat na server
+
+            document.getElementById('potvrzeni').textContent = `Děkujeme, ${jmeno}! Vaše zpráva byla přijata.`;
+            document.getElementById('jmeno').value = '';
+            document.getElementById('zprava').value = '';
+        }
+
+        // Lightbox: otevřít
+        document.querySelectorAll('.image-clickable').forEach(img => {
+            img.addEventListener('click', function () {
+                document.getElementById('lightbox-img').src = this.src;
+                document.getElementById('lightbox-overlay').style.display = 'flex';
+            });
+        });
+
+        // Lightbox: zavřít
+        function zavritLightbox() {
+            document.getElementById('lightbox-overlay').style.display = 'none';
         }
     </script>
 </body>
 </html>
-
 
