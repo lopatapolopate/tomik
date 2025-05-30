@@ -59,7 +59,7 @@
             </div>
         </section>
 
-        <section id="kontakt" class="contact">
+        <section id="kontakt">
             <h2>Kontaktujte nás</h2>
             <form onsubmit="odeslatFormular(event)">
                 <label for="jmeno">Jméno:</label>
@@ -82,18 +82,15 @@
     </div>
 
     <script>
-        // Odeslání formuláře
         function odeslatFormular(event) {
             event.preventDefault();
             const jmeno = document.getElementById('jmeno').value;
             const zprava = document.getElementById('zprava').value;
-
             document.getElementById('potvrzeni').textContent = `Děkujeme, ${jmeno}! Vaše zpráva byla přijata.`;
             document.getElementById('jmeno').value = '';
             document.getElementById('zprava').value = '';
         }
 
-        // Lightbox: otevřít
         document.querySelectorAll('.image-clickable').forEach(img => {
             img.addEventListener('click', function () {
                 document.getElementById('lightbox-img').src = this.src;
@@ -101,11 +98,9 @@
             });
         });
 
-        // Lightbox: zavřít
         function zavritLightbox() {
             document.getElementById('lightbox-overlay').style.display = 'none';
         }
     </script>
 </body>
 </html>
-
