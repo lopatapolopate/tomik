@@ -1,3 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+.animal {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.animal img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #4CAF50;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Tento blok zajišťuje jednotný vzhled všech obrázků na stránce */
+img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #4CAF50;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+form input, form textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 1rem;
+}
+
+.image-pair {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-pair img {
+    width: 300px;
+    height: 200px;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -54,3 +133,4 @@ form button:hover {
     margin-bottom: 0.5rem;
     line-height: 1.5;
 }
+
